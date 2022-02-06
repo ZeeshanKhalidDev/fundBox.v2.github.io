@@ -1,0 +1,263 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+body {
+  font-family: "rooney-sans", Avenir-Book, Calibri, sans-serif;
+  color: #424242;
+  line-height: 1.4;
+  font-size: 18px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+
+/* Animations */
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 100;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 100;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/* Base Styles */
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  text-align: center;
+  color: #777;
+  padding: 9px;
+  font-size: 18px;
+  font-weight: bold;
+  border: 1px solid #eaeaea;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 1px #eaeaea;
+          box-shadow: 0 1px 1px #eaeaea;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  -o-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  outline: none;
+}
+
+.button:hover,
+.button:focus {
+  border-color: #777;
+}
+
+.button:active {
+  -webkit-transform: translateY(2px);
+      -ms-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+/* Main Component Styles */
+.funding__container {
+  max-width: 400px;
+  margin: auto;
+}
+
+.funding__amount-needed {
+  background-color: #424242;
+  padding: 18px;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 13px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.funding__amount-needed::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #424242;
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  right: 30px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.funding__amount-needed-inner {
+  -webkit-animation: fade-in 0.5s 1.9s both;
+          animation: fade-in 0.5s 1.9s both;
+  font-size: 18px;
+  text-align: center;
+  font-weight: normal;
+  margin: 0;
+}
+
+.funding__progress-bar {
+  height: 12px;
+  border: 1px solid #eaeaea;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.funding__current-progress {
+  background-color: #ef5f3c;
+  height: 100%;
+  width: 0;
+  -webkit-transition: width 2s;
+  -o-transition: width 2s;
+  transition: width 2s;
+}
+
+.funding__give-section {
+  font-size: 18px;
+  color: #777;
+  border: 1px solid #eaeaea;
+  border-top: none;
+  line-height: 1.5;
+  text-align: left;
+  padding: 16px 18px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  margin-bottom: 11px;
+  -webkit-box-shadow: 0 1px 1px #eaeaea;
+          box-shadow: 0 1px 1px #eaeaea;
+}
+
+.funding__days-left {
+  font-size: 18px;
+}
+
+.funding__text-highlight {
+  color: #ef5f3c;
+}
+
+.funding__form {
+  margin-bottom: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.funding__dollar {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 18px;
+  color: #777;
+  font-weight: bold;
+}
+
+.funding__form-amount,
+.funding__form-button {
+  width: 50%;
+  border-radius: 3px;
+  outline: none;
+}
+
+.funding__form-amount {
+  padding: 12px 12px 12px 22px;
+  margin-right: 15px;
+  border: 1px solid #eaeaea;
+  font-size: 18px;
+  font-weight: bold;
+  color: #424242;
+}
+
+.funding__form-amount:focus {
+  border-color: #777;
+}
+
+.funding__form-button {
+  border: none;
+  background-color: #1cbc2c;
+  color: #fff;
+  font-size: 18px;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  -o-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.funding__form-button:hover,
+.funding__form-button:focus {
+  background-color: #1aaf29;
+}
+
+.funding__form-button:active {
+  -webkit-transform: translateY(2px);
+      -ms-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.funding__link {
+  color: #20a1d4;
+  font-style: italic;
+}
+
+.funding__footer-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.funding__button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.funding__button:first-child {
+  margin-right: 15px;
+}
