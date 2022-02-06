@@ -11,7 +11,7 @@ var numDonors = 0;
 var amountDonated = 0;
 var remainAmount;
 var goal = 300;
-var storedValue = localStorage.getItem('Donation Value');
+var storedValue = localStorage.getItem('Donation Value2');
 
 $(document).ready(function() {
     // Remaining days
@@ -54,7 +54,7 @@ form.on("submit", function(e) {
             });
         }
         progressBar.css("width", `${percentage}%`);
-        localStorage.setItem("Donation Value", donation);
+        localStorage.setItem("Donation Value2", donation);
 
     } else {
         amountDonated -= donation;
