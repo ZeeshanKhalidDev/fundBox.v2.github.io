@@ -86,6 +86,7 @@ a {
   -o-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out;
   outline: none;
+  background-color: transparent;
 }
 
 .button:hover,

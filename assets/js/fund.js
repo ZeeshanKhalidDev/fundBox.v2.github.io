@@ -8,6 +8,8 @@ var donorAmount = $(".funding__amount");
 var leftDays = $(".funding__days");
 
 var numDonors = 0;
+var percentage;
+var donation;
 var amountDonated = 0;
 var remainAmount;
 var goal = 300;
@@ -23,7 +25,9 @@ $(document).ready(function() {
 
     // Local Storage
     input.val(storedValue.toLocaleString());
-    donorAmount.text(storedValue.toLocaleString());
+
+    // If you want to show the Stored amount in "why give $" then uncomment this code.
+    // donorAmount.text(storedValue.toLocaleString());
 });
 
 
@@ -32,9 +36,7 @@ form.on("submit", function(e) {
     e.preventDefault();
 
     // Get donation amount
-    var donation = parseInt(input.val());
-    var percentage;
-
+    donation = parseInt(input.val());
     amountDonated += donation;
 
     if (parseInt(amountDonated) <= parseInt(goal)) {
@@ -54,10 +56,14 @@ form.on("submit", function(e) {
             });
         }
         progressBar.css("width", `${percentage}%`);
-        localStorage.setItem("Donation Value2", donation);
 
     } else {
         amountDonated -= donation;
         alert("Amount should not exceed $300");
     }
 });
+
+$('#save_later').click(function(){
+    donation = parseInt(input.val());
+    localStorage.setItem("Donation Value2", donation);
+})
